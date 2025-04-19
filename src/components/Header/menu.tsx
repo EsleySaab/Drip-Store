@@ -1,5 +1,5 @@
 import { Menu } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet"
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet"
 
 const MenuMobile = () => {
   return (
@@ -9,7 +9,7 @@ const MenuMobile = () => {
           <Menu className="w-6 h-6 mt-2" />
         </SheetTrigger>
         <SheetContent>
-          <div>Links do menu</div>
+          <SheetTitle>Menu Mobile</SheetTitle>
         </SheetContent>
       </Sheet>
     </div>
