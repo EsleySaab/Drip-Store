@@ -47,7 +47,7 @@ const HeaderActions = () => {
           </div>
         )}
 
-        <Button variant="ghost" className="relative">
+        <Button variant="ghost" className="relative cursor-pointer">
           <ShoppingCart className="w-5 h-5 text-primary" />
           <Badge className="absolute top-1 right-0 px-1 py-0">
             <span className="text-white text-xs">2</span>
