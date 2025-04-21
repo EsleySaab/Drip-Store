@@ -12,7 +12,11 @@ const HomePage = () => {
       <div className="bg-gray-100">
         <Gallery images={images} width="1440px" height="681px" radius="8px" />
       </div>
-      <Section title="Coleções em destaque" link={{ text: "", href: "#" }}>
+      <Section
+        title="Coleções em destaque"
+        link={{ text: "", href: "#" }}
+        titleAlign="left"
+      >
         <div>
           <Collections />
         </div>

@@ -34,7 +34,7 @@ const Header = () => {
         {/* Ações */}
         <HeaderActions />
       </div>
-      <div className="hidden md:flex gap-10 mb-5 mx-auto text-gray-700">
+      <div className="hidden md:flex gap-10 mb-5 px-30 text-gray-700">
         <Link href="/">Home</Link>
         <Link href="/products">Produtos</Link>
         <Link href="/">Categorias</Link>
