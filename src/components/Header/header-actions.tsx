@@ -5,7 +5,7 @@ import { Search, ShoppingCart } from "lucide-react"
 import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
 import { useState } from "react"
-import Link from "next/link"
+import AuthButtons from "../AuthButtons"
 
 const HeaderActions = () => {
   const [showSearchMobile, setShowSearchMobile] = useState(false)
@@ -27,19 +27,7 @@ const HeaderActions = () => {
 
         {!isSignedIn ? (
           <>
-            <div className="hidden md:block text-center underline decoration-dark-gray-2">
-              <Link href="/login" className="cursor-pointer">
-                <p className="text-dark-gray-2">Cadastre-se</p>
-              </Link>
-            </div>
-
-            <div className="hidden md:flex text-center">
-              <Link href="/login">
-                <Button className="w-[114px] mr-5 cursor-pointer">
-                  <p className="text-white font-bold">Entrar</p>
-                </Button>
-              </Link>
-            </div>
+            <AuthButtons />
           </>
         ) : (
           <div className="hidden md:flex items-center gap-2 mr-4">
