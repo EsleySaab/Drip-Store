@@ -6,14 +6,23 @@ import HeaderActions from "./header-actions"
 import SearchInput from "./search-input"
 import MenuMobile from "./menu"
 import Link from "next/link"
+import { navigationLinks } from "@/utils/navigationLinks"
 
 const Header = () => {
   const pathname = usePathname()
 
-  // Rotas em que o header deve ser escondido
+  // Header escondido na página de login
   const hideHeaderOn = ["/login"]
 
   if (hideHeaderOn.includes(pathname)) return null
+
+  const navLinks = navigationLinks
+
+  const getLinkClass = (path: string) => {
+    return pathname === path
+      ? "text-primary border-b-2 border-primary"
+      : "text-gray-700"
+  }
 
   return (
     <header className="w-full relative flex flex-col md:px-20">
@@ -34,11 +43,18 @@ const Header = () => {
         {/* Ações */}
         <HeaderActions />
       </div>
-      <div className="hidden md:flex gap-10 mb-5 px-30 text-gray-700">
-        <Link href="/">Home</Link>
-        <Link href="/products">Produtos</Link>
-        <Link href="/">Categorias</Link>
-        <Link href="/">Meus pedidos</Link>
+
+      {/* Navegação */}
+      <div className="hidden md:flex gap-10 mb-5 mx-auto">
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`hover:text-primary ${getLinkClass(link.href)}`}
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
     </header>
   )

@@ -1,16 +1,16 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { colletcions } from "@/utils/collections"
+import { collections } from "@/utils/collections"
 import Image from "next/image"
 import Link from "next/link"
 
 const Collections = () => {
   // Array de imagens das coleções em destaque
-  const collections = colletcions
+  const homeCollections = collections
 
   return (
     <div className="flex flex-col p-5 space-y-3 md:flex-row md:space-x-5">
-      {collections.map((collection, index) => (
+      {homeCollections.map((collection, index) => (
         <div key={index} className="relative w-full">
           <Image
             alt={collection.title}
