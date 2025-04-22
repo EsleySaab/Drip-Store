@@ -9,7 +9,7 @@ const Collections = () => {
   const homeCollections = collections
 
   return (
-    <div className="flex flex-col p-5 space-y-3 md:flex-row md:space-x-5">
+    <div className="flex flex-col p-5 md:p-0 space-y-3 md:flex-row md:space-x-5">
       {homeCollections.map((collection, index) => (
         <div key={index} className="relative w-full">
           <Image

@@ -34,7 +34,7 @@ const MenuMobile = () => {
           <SheetTitle className="text-foreground mb-4">Páginas</SheetTitle>
 
           {/* Links de navegação */}
-          <div className="flex flex-col space-y-4 flex-grow">
+          <div className="flex flex-col space-y-4 flex-grow border-b border-gray-300">
             {navLinks.map((link) => (
               <li key={link.href} className="list-none">
                 <Link

@@ -23,7 +23,9 @@ const Section: React.FC<SectionProps> = ({
           titleAlign === "center" ? "justify-center" : "justify-start"
         } items-center mb-4`}
       >
-        <h2 className="text-dark-gray-2 text-2xl font-semibold mx-auto md:mx-5">{title}</h2>
+        <h2 className="text-dark-gray-2 text-2xl font-semibold mx-6 md:mx-0">
+          {title}
+        </h2>
         {link && (
           <a href={link.href} className="ml-4 text-primary text-lg">
             {link.text}
