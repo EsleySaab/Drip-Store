@@ -66,7 +66,7 @@ export const Gallery = ({
       <button
         onClick={goToPrev}
         disabled={isFirst}
-        className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 disabled:opacity-40"
+        className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 disabled:opacity-40 cursor-pointer"
       >
         <Image src={ArrowLeft} alt="Anterior" />
       </button>
@@ -74,7 +74,7 @@ export const Gallery = ({
       <button
         onClick={goToNext}
         disabled={isLast}
-        className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 disabled:opacity-40"
+        className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 disabled:opacity-40 cursor-pointer"
       >
         <Image src={ArrowRight} alt="Próxima" />
       </button>

@@ -9,7 +9,7 @@ const images = homeSlideImages
 
 const HomePage = () => {
   return (
-    <div className="max-w-[1440px] mx-auto space-y-5">
+    <div className="max-w-[1440px] mx-auto space-y-5 h-full">
       <div>
         <Gallery images={images} width="1440px" height="681px" radius="8px" />
       </div>

@@ -1,6 +1,7 @@
 import { products } from "@/utils/products"
 import Image from "next/image"
 import Link from "next/link"
+import { Badge } from "../ui/badge"
 
 const ProductCard = () => {
   const productsList = products
@@ -10,13 +11,20 @@ const ProductCard = () => {
       {productsList.map((product, index) => (
         <div key={index}>
           <Link href="/">
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={163}
-              height={179}
-              className="rounded-b-sm md:w-full hover:border-2 border-primary transition-all duration-100 mb-2"
-            />
+            <div className="relative">
+              {product.hasDiscountBadge && (
+                <Badge className="bg-[#F6AA1C] absolute top-2 left-2  hover:bg-[#F6AA1C] w-[96] h-[32] flex items-center justify-center">
+                  <p>30% OFF</p>
+                </Badge>
+              )}
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={163}
+                height={179}
+                className="rounded-b-sm md:w-full hover:border-2 border-primary transition-all duration-100 mb-2"
+              />
+            </div>
           </Link>
           <div className="flex flex-col">
             <p className="text-xs text-gray-400 font-bold md:text-sm mb-1">
