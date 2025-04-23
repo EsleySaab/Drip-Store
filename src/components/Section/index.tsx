@@ -2,7 +2,7 @@ import React from "react"
 
 interface SectionProps {
   title: string
-  titleAlign?: "left" | "center"
+  titleAction?: React.ReactNode
   link?: {
     text: string
     href: string
@@ -12,26 +12,23 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({
   title,
-  titleAlign = "left",
   link,
   children,
+  titleAction,
 }) => {
   return (
     <div className="mb-8">
-      <div
-        className={`flex ${
-          titleAlign === "center" ? "justify-center" : "justify-start"
-        } items-center mb-4`}
-      >
+      <div className="flex justify-between items-center">
         <h2 className="text-dark-gray-2 text-2xl font-semibold mx-6 md:mx-0">
           {title}
         </h2>
-        {link && (
-          <a href={link.href} className="ml-4 text-primary text-lg">
-            {link.text}
-          </a>
-        )}
+        {titleAction}
       </div>
+      {link && (
+        <a href={link.href} className="ml-4 text-primary text-lg">
+          {link.text}
+        </a>
+      )}
       <div>{children}</div>
     </div>
   )

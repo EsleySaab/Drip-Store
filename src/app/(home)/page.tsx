@@ -10,19 +10,18 @@ const images = homeSlideImages
 const HomePage = () => {
   return (
     <div className="max-w-[1440px] mx-auto space-y-5 h-full">
+      {/* Slide de imagens da Página Inicial */}
       <div>
         <Gallery images={images} width="1440px" height="681px" radius="8px" />
       </div>
-      <Section
-        title="Coleções em destaque"
-        link={{ text: "", href: "#" }}
-        titleAlign="left"
-      >
+      {/* Coleções em destaque */}
+      <Section title="Coleções em destaque" link={{ text: "", href: "#" }}>
         <div>
           <Collections />
         </div>
       </Section>
 
+      {/* Listagem de Produtos em Alta */}
       <ProductListing />
     </div>
   )
