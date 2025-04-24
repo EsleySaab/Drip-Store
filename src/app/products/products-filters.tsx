@@ -5,10 +5,12 @@ const ProductsFilters = () => {
   return (
     <aside className="space-y-6">
       {/* Campo de ordenação */}
-      <OrderBy />
+      <div className="hidden md:block">
+        <OrderBy />
+      </div>
       {/* Filtro */}
-      <div className="bg-white w-[308px] p-4 mt-10">
-        <h3 className="text-[16px] text-dark-gray-2 font-semibold mb-2">
+      <div className="bg-white md:w-[308px]  p-4 md:mt-10 mt-0">
+        <h3 className="hidden md:block text-[16px] text-dark-gray-2 font-semibold mb-2 border-b border-gray-400 pb-4">
           Filtrar por
         </h3>
         <hr className="border-t border-white/50 mb-4" />
