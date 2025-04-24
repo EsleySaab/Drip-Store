@@ -38,7 +38,7 @@ const HomePage = () => {
         }
       >
         <div className="mt-3">
-          <ProductListing />
+          <ProductListing limit={8} />
         </div>
       </Section>
     </div>

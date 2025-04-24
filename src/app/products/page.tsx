@@ -2,6 +2,7 @@ import Section from "@/components/Section"
 import { products } from "@/utils/products"
 import ProductsFilters from "./products-filters"
 import ProductListing from "@/components/ProductListing"
+import ProductsFiltersMobile from "./products-filters-mobile"
 
 const Products = () => {
   // Array de produtos
@@ -15,9 +16,12 @@ const Products = () => {
         </div>
         {/* MAIN */}
         <main className="mt-4">
+          <div className="md:hidden flex items-center w-[350px] h-[102px] mx-auto gap-3">
+            <ProductsFiltersMobile />
+          </div>
           <Section title={`Foram encontrados ${productsList.length} produtos`}>
             <div className="mt-3">
-              <ProductListing />
+              <ProductListing mdCols={3} />
             </div>
           </Section>
         </main>

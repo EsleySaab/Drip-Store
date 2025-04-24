@@ -19,7 +19,7 @@ const Section: React.FC<SectionProps> = ({
   return (
     <div className="mb-8">
       <div className="flex justify-between items-center">
-        <h2 className="text-dark-gray-2 text-2xl font-semibold mx-6 md:mx-0">
+        <h2 className="text-dark-gray-2 md:text-2xl text-xl font-semibold mx-8 md:mx-0">
           {title}
         </h2>
         {titleAction}

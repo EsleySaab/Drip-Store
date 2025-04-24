@@ -1,18 +1,11 @@
 import FilterGroup from "@/components/FilterGroup"
+import OrderBy from "./order-by"
 
 const ProductsFilters = () => {
   return (
     <aside className="space-y-6">
       {/* Campo de ordenação */}
-      <div className="w-[308px] h-[60px] mt-4">
-        <label className="block text-[16px] text-dark-gray-2 mb-1 font-semibold">
-          Ordenar por
-        </label>
-        <select className="w-full h-full border border-gray-300 px-4 text-dark-gray-2">
-          <option value="asc">Menor preço</option>
-          <option value="desc">Maior preço</option>
-        </select>
-      </div>
+      <OrderBy />
       {/* Filtro */}
       <div className="bg-white w-[308px] p-4 mt-10">
         <h3 className="text-[16px] text-dark-gray-2 font-semibold mb-2">
