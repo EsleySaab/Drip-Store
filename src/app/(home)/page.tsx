@@ -3,6 +3,8 @@ import Section from "@/components/Section"
 import { homeSlideImages } from "@/utils/home-slide-images"
 import Collections from "./collections"
 import ProductListing from "@/components/ProductListing"
+import Link from "next/link"
+import { ArrowRightIcon } from "lucide-react"
 
 // Array de imagens para o slide da HomePage
 const images = homeSlideImages
@@ -22,7 +24,23 @@ const HomePage = () => {
       </Section>
 
       {/* Listagem de Produtos em Alta */}
-      <ProductListing />
+      <Section
+        title="Produtos em alta"
+        titleAction={
+          <div>
+            <Link href="/products">
+              <div className="flex items-center mr-8 md:mr-0 gap-1">
+                <p className="text-primary">Ver todos</p>
+                <ArrowRightIcon className="text-primary" size={18} />
+              </div>
+            </Link>
+          </div>
+        }
+      >
+        <div className="mt-3">
+          <ProductListing />
+        </div>
+      </Section>
     </div>
   )
 }

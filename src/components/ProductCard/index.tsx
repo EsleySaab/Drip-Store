@@ -2,18 +2,21 @@ import { products } from "@/utils/products"
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "../ui/badge"
+interface ProductCardProps {
+  className?: string
+}
 
-const ProductCard = () => {
+const ProductCard = ({ className }: ProductCardProps) => {
   const productsList = products
 
   return (
-    <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 mx-7 md:mx-0 md:w-[1440px]">
+    <div className={`grid gap-4 ${className}`}>
       {productsList.map((product, index) => (
         <div key={index}>
           <Link href="/">
             <div className="relative">
               {product.hasDiscountBadge && (
-                <Badge className="bg-[#F6AA1C] absolute top-2 left-2  hover:bg-[#F6AA1C] w-[96] h-[32] flex items-center justify-center">
+                <Badge className="bg-[#F6AA1C] absolute top-2 left-2 hover:bg-[#F6AA1C] w-[96px] h-[32px] flex items-center justify-center">
                   <p>30% OFF</p>
                 </Badge>
               )}
