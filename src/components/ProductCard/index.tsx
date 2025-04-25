@@ -17,7 +17,7 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <div>
-      <Link href="/">
+      <Link href="/product-view">
         <div className="relative">
           {product.hasDiscountBadge && (
             <Badge className="bg-[#F6AA1C] absolute top-2 left-2 hover:bg-[#F6AA1C] w-[96px] h-[32px] flex items-center justify-center">

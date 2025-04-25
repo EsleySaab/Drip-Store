@@ -10,8 +10,10 @@ import Image from "next/image"
 
 interface GalleryProps {
   className?: string
-  width?: string
-  height?: string
+  widthMobile?: string
+  widthDesktop?: string
+  heightMobile?: string
+  heightDesktop?: string
   radius?: string
   showThumbs?: boolean
   images: { src: string }[]
@@ -19,9 +21,12 @@ interface GalleryProps {
 
 export const Gallery = ({
   className,
-  width = "100%",
+  widthMobile = "100%",
+  widthDesktop = "100%",
+  heightMobile = "280px",
+  heightDesktop = "681px",
   radius = "0px",
-  showThumbs = false,
+  showThumbs = true,
   images,
 }: GalleryProps) => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -42,31 +47,38 @@ export const Gallery = ({
 
   return (
     <div
-      className={clsx("relative w-full", className)}
-      style={{ maxWidth: width }}
+      className={clsx("relative", className)}
+      style={{ maxWidth: widthMobile }}
     >
       {/* Slide principal */}
       <div ref={sliderRef} className="keen-slider w-full overflow-hidden">
         {images.map((img, i) => (
           <div className="keen-slider__slide" key={i}>
-            <div className="relative w-full h-[280px] sm:h-[681px]">
+            <div
+              className="relative w-full"
+              style={{
+                height: heightMobile,
+              }}
+            >
               <Image
                 src={img.src}
                 alt={`Slide ${i + 1}`}
                 fill
-                className="object-top sm:object-cover rounded"
-                style={{ borderRadius: radius }}
+                className="object-top md:object-contain rounded"
+                style={{
+                  borderRadius: radius,
+                }}
               />
             </div>
           </div>
         ))}
       </div>
 
-      {/* Setas de navegação (Only Desktop) */}
+      {/* Navegação */}
       <button
         onClick={goToPrev}
         disabled={isFirst}
-        className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 disabled:opacity-40 cursor-pointer"
+        className="hidden sm:flex absolute left-1 top-75 -translate-y-1/2 z-10 disabled:opacity-40 cursor-pointer"
       >
         <Image src={ArrowLeft} alt="Anterior" />
       </button>
@@ -74,12 +86,12 @@ export const Gallery = ({
       <button
         onClick={goToNext}
         disabled={isLast}
-        className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 disabled:opacity-40 cursor-pointer"
+        className="hidden sm:flex absolute right-1 top-75 -translate-y-1/2 z-10 disabled:opacity-40 cursor-pointer"
       >
         <Image src={ArrowRight} alt="Próxima" />
       </button>
 
-      {/* Indicadores de slide (Only Mobile) */}
+      {/* Indicadores mobile */}
       <div className="flex sm:hidden justify-center gap-2 mt-2">
         {images.map((_, index) => (
           <button
@@ -96,26 +108,39 @@ export const Gallery = ({
       {showThumbs && (
         <div className="flex gap-2 sm:gap-4 mt-4 overflow-x-auto px-2 sm:px-0">
           {images.map((img, index) => (
-            <Image
-              width={117}
-              height={95}
-              key={index}
-              src={img.src}
-              onClick={() => instanceRef.current?.moveToIdx(index)}
-              alt={`Thumb ${index + 1}`}
-              className={clsx(
-                "object-contain md:object-cover cursor-pointer shrink-0",
-                index === currentSlide
-                  ? "border-2 border-primary"
-                  : "border border-transparent"
-              )}
-              style={{
-                borderRadius: radius,
-              }}
-            />
+            <div key={index} className="md:w-[117px] md:h-[95px] w-[60px] h-[50px] shrink-0">
+              <Image
+                src={img.src}
+                alt={`Thumb ${index + 1}`}
+                width={117}
+                height={95}
+                onClick={() => instanceRef.current?.moveToIdx(index)}
+                className={clsx(
+                  "object-cover cursor-pointer w-full h-full",
+                  index === currentSlide
+                    ? "border-2 border-primary"
+                    : "border border-transparent"
+                )}
+                style={{
+                  borderRadius: radius,
+                }}
+              />
+            </div>
           ))}
         </div>
       )}
+
+      <style jsx>{`
+        @media (min-width: 640px) {
+          div[style] {
+            width: ${widthDesktop} !important;
+          }
+
+          div[style] > div {
+            height: ${heightDesktop} !important;
+          }
+        }
+      `}</style>
     </div>
   )
 }

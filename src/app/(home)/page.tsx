@@ -14,7 +14,7 @@ const HomePage = () => {
     <div className="max-w-[1440px] mx-auto space-y-5 h-full">
       {/* Slide de imagens da Página Inicial */}
       <div>
-        <Gallery images={images} width="1440px" height="681px" radius="8px" />
+        <Gallery images={images} widthDesktop="1440px" heightDesktop="681px" radius="8px" showThumbs={false}/>
       </div>
       {/* Coleções em destaque */}
       <Section title="Coleções em destaque" link={{ text: "", href: "#" }}>
