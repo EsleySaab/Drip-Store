@@ -108,7 +108,10 @@ export const Gallery = ({
       {showThumbs && (
         <div className="flex gap-2 sm:gap-4 mt-4 overflow-x-auto px-2 sm:px-0">
           {images.map((img, index) => (
-            <div key={index} className="md:w-[117px] md:h-[95px] w-[60px] h-[50px] shrink-0">
+            <div
+              key={index}
+              className="md:w-[117px] md:h-[95px] w-[60px] h-[50px] shrink-0"
+            >
               <Image
                 src={img.src}
                 alt={`Thumb ${index + 1}`}
@@ -136,7 +139,7 @@ export const Gallery = ({
             width: ${widthDesktop} !important;
           }
 
-          div[style] > div {
+          div[style] {
             height: ${heightDesktop} !important;
           }
         }
