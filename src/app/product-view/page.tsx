@@ -22,16 +22,18 @@ const ProductView = () => {
           heightDesktop="571px"
           showThumbs
         />
+
         {/* BuyBox */}
         <BuyBox />
       </div>
+
       <div className="md:mt-[150px]">
-        <Section
+        <Section mobileMarginX="mx-0"
           title="Produtos em alta"
           titleAction={
             <div>
               <Link href="/products">
-                <div className="flex items-center mr-8 md:mr-0 gap-1">
+                <div className="flex items-center mr-3 md:mr-0 gap-1">
                   <p className="text-primary">Ver todos</p>
                   <ArrowRightIcon className="text-primary" size={18} />
                 </div>
@@ -40,7 +42,7 @@ const ProductView = () => {
           }
         >
           <div className="mt-3">
-            <ProductListing limit={4} />
+            <ProductListing limit={4} mobileMarginX="mx-0"/>
           </div>
         </Section>
       </div>

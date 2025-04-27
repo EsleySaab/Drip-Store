@@ -8,6 +8,7 @@ interface SectionProps {
     href: string
   }
   children: React.ReactNode
+  mobileMarginX?: string
 }
 
 const Section: React.FC<SectionProps> = ({
@@ -15,11 +16,14 @@ const Section: React.FC<SectionProps> = ({
   link,
   children,
   titleAction,
+  mobileMarginX,
 }) => {
   return (
     <div className="mb-8">
       <div className="flex justify-between items-center">
-        <h2 className="text-dark-gray-2 md:text-2xl text-xl font-semibold mx-8 md:mx-0">
+        <h2
+          className={`text-dark-gray-2 md:text-2xl text-xl font-semibold ${mobileMarginX} md:mx-0`}
+        >
           {title}
         </h2>
         {titleAction}

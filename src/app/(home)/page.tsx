@@ -14,17 +14,24 @@ const HomePage = () => {
     <div className="max-w-[1440px] mx-auto space-y-5 h-full">
       {/* Slide de imagens da Página Inicial */}
       <div>
-        <Gallery images={images} widthDesktop="1440px" heightDesktop="681px" radius="8px" showThumbs={false} />
+        <Gallery
+          images={images}
+          widthDesktop="1440px"
+          heightDesktop="681px"
+          radius="8px"
+          showThumbs={false}
+        />
       </div>
       {/* Coleções em destaque */}
-      <Section title="Coleções em destaque" link={{ text: "", href: "#" }}>
-        <div>
+      <Section title="Coleções em destaque" mobileMarginX="mx-7">
+        <div className="md:mt-2">
           <Collections />
         </div>
       </Section>
 
       {/* Listagem de Produtos em Alta */}
       <Section
+        mobileMarginX="mx-7"
         title="Produtos em alta"
         titleAction={
           <div>
@@ -38,7 +45,7 @@ const HomePage = () => {
         }
       >
         <div className="mt-3">
-          <ProductListing limit={8} />
+          <ProductListing limit={8} mobileMarginX="mx-7"/>
         </div>
       </Section>
     </div>

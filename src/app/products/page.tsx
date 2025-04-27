@@ -19,9 +19,12 @@ const Products = () => {
           <div className="md:hidden flex items-center w-[350px] h-[102px] mx-auto gap-3">
             <ProductsFiltersMobile />
           </div>
-          <Section title={`Foram encontrados ${productsList.length} produtos`}>
+          <Section
+            title={`Foram encontrados ${productsList.length} produtos`}
+            mobileMarginX="mx-7"
+          >
             <div className="mt-3">
-              <ProductListing mdCols={3} />
+              <ProductListing mdCols={3} mobileMarginX="mx-7" />
             </div>
           </Section>
         </main>
