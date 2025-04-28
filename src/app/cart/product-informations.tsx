@@ -7,14 +7,14 @@ const ProductInformations = () => {
     <div className="flex-1 h-[352px] bg-white p-7 space-y-4 rounded-sm">
       <div className="flex items-center justify-between border-b border-gray-300 pb-4">
         <h4 className="uppercase font-semibold">Meu Carrinho</h4>
-        <div className="flex space-x-20 items-center">
+        <div className="flex space-x-18 items-center">
           <p className="uppercase text-sm">Quantidade</p>
           <p className="uppercase text-sm">Unitário</p>
           <p className="uppercase text-sm">Total</p>
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-b border-gray-300 pb-4">
+      <div className="flex items-center justify-between border-b border-gray-300 pb-4 md:flex-row flex-col">
         <div className="flex gap-5">
           <Image
             width={128}
