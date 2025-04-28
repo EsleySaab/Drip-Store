@@ -9,7 +9,7 @@ import { ArrowRightIcon } from "lucide-react"
 // Array de imagens para o slide da HomePage
 const images = homeSlideImages
 
-const HomePage = () => {
+const HomePage = async () => {
   return (
     <div className="max-w-[1440px] mx-auto space-y-5 h-full">
       {/* Slide de imagens da Página Inicial */}
@@ -45,7 +45,7 @@ const HomePage = () => {
         }
       >
         <div className="mt-3">
-          <ProductListing limit={8} mobileMarginX="mx-7"/>
+          <ProductListing limit={8} mobileMarginX="mx-7" />
         </div>
       </Section>
     </div>
