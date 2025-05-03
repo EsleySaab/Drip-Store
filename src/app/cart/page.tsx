@@ -1,5 +1,6 @@
 import OrderSummary from "./order-summary"
 import ProductInformations from "./product-informations"
+import RelatedProducts from "./related-products."
 
 const Cart = () => {
   return (
@@ -8,6 +9,7 @@ const Cart = () => {
         <ProductInformations />
         <OrderSummary />
       </div>
+      <RelatedProducts />
     </div>
   )
 }

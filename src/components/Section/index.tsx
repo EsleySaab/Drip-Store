@@ -22,7 +22,7 @@ const Section: React.FC<SectionProps> = ({
     <div className="mb-8">
       <div className="flex justify-between items-center">
         <h2
-          className={`text-dark-gray-2 md:text-2xl text-xl font-semibold ${mobileMarginX} md:mx-0`}
+          className={`text-dark-gray-2 md:text-2xl text-xl font-semibold md:mb-4 ${mobileMarginX} md:mx-0`}
         >
           {title}
         </h2>
