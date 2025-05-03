@@ -5,7 +5,7 @@ import ProductListing from "@/components/ProductListing"
 
 const RelatedProducts = () => {
   return (
-    <div className="w-[1090px] mt-10 hidden md:block">
+    <div className="w-[1078px] mt-10 hidden md:block">
       <Section
         title="Produtos Relacionados"
         titleAction={

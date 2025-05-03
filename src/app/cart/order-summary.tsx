@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 const OrderSummary = () => {
   return (
-    <div className="w-[334px] h-[364px] bg-white rounded-sm p-7 space-y-4">
+    <div className="w-[334px] h-[364px] bg-white rounded-sm p-7 space-y-4 hidden md:block">
       <h4 className="uppercase font-semibold border-b border-gray-300 pb-4">
         Resumo
       </h4>
@@ -24,7 +24,7 @@ const OrderSummary = () => {
           <p className="text-primary font-semibold text-lg">R$ 219,00</p>
         </div>
       </div>
-      <p className="text-sm text-gray-400 text-right">
+      <p className="text-sm text-gray-500 text-right">
         ou 10x de R$ 21,00 sem juros
       </p>
       <Button className="bg-yellow-500 text-white cursor-pointer w-full font-semibold">

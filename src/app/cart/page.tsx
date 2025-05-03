@@ -9,6 +9,7 @@ const Cart = () => {
         <ProductInformations />
         <OrderSummary />
       </div>
+      {/* Produtos Relacionados (only desktop) */}
       <RelatedProducts />
     </div>
   )
