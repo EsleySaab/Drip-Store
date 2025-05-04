@@ -4,59 +4,68 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
+  /* Cores principais */
+  --color-primary: #c92071;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #b5b6f2;
+  --color-secondary-foreground: #000000;
+
+  --color-accent: #e7a6ff;
+  --color-accent-foreground: #000000;
+
+  --color-muted: #f0f0f0;
+  --color-muted-foreground: #666666;
+
+  --color-destructive: #ee4266;
+  --color-success: #52ca76;
+  --color-warning: #e7ff86;
+
+  /* Fundo geral e texto */
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+
+  /* Popover e card */
+  --color-popover: #ffffff;
+  --color-popover-foreground: #000000;
+
+  --color-card: #f8f8f8;
+  --color-card-foreground: #1f1f1f;
+
+  /* Input e bordas */
+  --color-input: #f5f5f5;
+  --color-border: #e5e5e5;
+  --color-ring: #c92071;
+
+  /* Sidebar */
+  --color-sidebar: #1f1f1f;
+  --color-sidebar-foreground: #cccccc;
+  --color-sidebar-primary: #c92071;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #b5b6f2;
+  --color-sidebar-accent-foreground: #000000;
+  --color-sidebar-border: #2c2c2c;
+  --color-sidebar-ring: #c92071;
+
+  /* Gráficos */
+  --color-chart-1: #c92071;
+  --color-chart-2: #e7a6ff;
+  --color-chart-3: #b5b6f2;
+  --color-chart-4: #52ca76;
+  --color-chart-5: #ee4266;
+
+  /* Cinzas */
+  --color-dark-gray: #1f1f1f;
+  --color-dark-gray-2: #474747;
+  --color-dark-gray-3: #666666;
+  --color-light-gray: #8f8f8f;
+  --color-light-gray-2: #cccccc;
+  --color-light-gray-3: #e5e5e5;
+
+  /* Radius */
+  --radius: 0.625rem;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-}
-
-:root {
-  --radius: 0.625rem;
-  --primary: #C92071;
-  --secondary: #B5B6F2;
-  --tertiary: #991956;
-  --error: #EE4266;
-  --success: #52CA76;
-  --warning: #E7FF86;
-  --dark-gray: #1F1F1F;
-  --dark-gray-2: #474747;
-  --dark-gray-3: #666666;
-  --light-gray: #8F8F8F;
-  --light-gray-2: #CCCCCC;
-  --light-gray-3: #CCCCCC;
-  --background: #FFFFFF;
-  --foreground: #000000;
 }
