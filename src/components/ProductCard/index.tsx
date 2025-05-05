@@ -1,14 +1,7 @@
 import { Badge } from "../ui/badge"
 import Image from "next/image"
 import Link from "next/link"
-
-interface Product {
-  name: string
-  price: number
-  priceDiscount: number
-  image: string
-  hasDiscountBadge?: boolean
-}
+import { Product } from "@/types/product"
 
 interface ProductCardProps {
   product: Product
@@ -34,13 +27,17 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
       </Link>
       <div className="flex flex-col">
-        <p className="text-xs text-light-gray font-bold md:text-sm mb-1">Tênis</p>
+        <p className="text-xs text-light-gray font-bold md:text-sm mb-1">
+          Tênis
+        </p>
         <p className="text-sm font-semibold text-dark-gray-2 md:text-md opacity-70">
           {product.name}
         </p>
         <div className="flex gap-2">
           <p className="opacity-50 line-through">${product.price}</p>
-          <p className="font-bold text-dark-gray">${product.priceDiscount}</p>
+          <p className="font-bold text-dark-gray">
+            ${product.priceDiscount ? product.priceDiscount : ""}
+          </p>
         </div>
       </div>
     </div>

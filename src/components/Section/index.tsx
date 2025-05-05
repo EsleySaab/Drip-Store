@@ -1,7 +1,7 @@
 import React from "react"
 
 interface SectionProps {
-  title: string
+  title: React.ReactNode
   titleAction?: React.ReactNode
   link?: {
     text: string

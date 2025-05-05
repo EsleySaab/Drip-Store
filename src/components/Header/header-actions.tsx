@@ -6,6 +6,7 @@ import { Button } from "../ui/button"
 import { Badge } from "../ui/badge"
 import { useState } from "react"
 import AuthButtons from "../AuthButtons"
+import SearchInput from "./search-input"
 
 const HeaderActions = () => {
   const [showSearchMobile, setShowSearchMobile] = useState(false)
@@ -43,18 +44,7 @@ const HeaderActions = () => {
         </Button>
       </div>
 
-      {showSearchMobile && (
-        <div className="md:hidden w-screen mt-3">
-          <div className="flex items-center bg-light-gray-3 px-4 py-3 rounded-md w-[300px]">
-            <input
-              type="text"
-              placeholder="Pesquisar produto..."
-              className="bg-light-gray-3 w-full outline-0 text-gray-600"
-            />
-            <Search className="text-light-gray" />
-          </div>
-        </div>
-      )}
+      {showSearchMobile && <SearchInput isMobile />}
     </>
   )
 }

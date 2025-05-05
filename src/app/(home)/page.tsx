@@ -5,6 +5,7 @@ import Collections from "./collections"
 import ProductListing from "@/components/ProductListing"
 import Link from "next/link"
 import { ArrowRightIcon } from "lucide-react"
+import { products } from "@/utils/products"
 
 // Array de imagens para o slide da HomePage
 const images = homeSlideImages
@@ -45,7 +46,7 @@ const HomePage = async () => {
         }
       >
         <div className="mt-3">
-          <ProductListing limit={8} mobileMarginX="mx-7" />
+          <ProductListing limit={8} mobileMarginX="mx-7" products={products} />
         </div>
       </Section>
     </div>

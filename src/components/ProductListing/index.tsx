@@ -1,8 +1,9 @@
-import { products } from "@/utils/products"
 import ProductCard from "../ProductCard"
 import clsx from "clsx"
+import { Product } from "@/types/product"
 
 interface ProductListingProps {
+  products: Product[]
   mdCols?: number
   className?: string
   limit?: number
@@ -10,6 +11,7 @@ interface ProductListingProps {
 }
 
 const ProductListing = ({
+  products,
   mdCols = 4,
   className = "",
   limit,
@@ -20,10 +22,7 @@ const ProductListing = ({
     "md:grid-cols-4": mdCols === 4,
   })
 
-  // Array de produtos
-  const productsArray = products
-
-  const productsList = limit ? productsArray.slice(0, limit) : productsArray
+  const productsList = limit ? products.slice(0, limit) : products
 
   return (
     <div
